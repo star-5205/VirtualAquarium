@@ -1,0 +1,475 @@
+{
+  "sheet": "fish_sprite_sheet_64.png",
+  "frameSize": 64,
+  "fish": [
+    {
+      "name": "dark-blue",
+      "colStart": 0,
+      "rowStart": 0,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 1 },
+                { "col": 1, "row": 1 },
+                { "col": 2, "row": 1 },
+                { "col": 3, "row": 1 }
+            ]
+        },{
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 0, "row": 2 },
+                { "col": 1, "row": 2 },
+                { "col": 2, "row": 2 },
+                { "col": 3, "row": 2 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 0 },
+                { "col": 1, "row": 0 },
+                { "col": 2, "row": 0 },
+                { "col": 3, "row": 0 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 4 },
+                { "col": 1, "row": 4 },
+                { "col": 2, "row": 4 },
+                { "col": 3, "row": 4 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "light-blue",
+      "colStart": 8,
+      "rowStart": 0,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 1 },
+                { "col": 9, "row": 1 },
+                { "col": 10, "row": 1 },
+                { "col": 11, "row": 1 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 8, "row": 2 },
+                { "col": 9, "row": 2 },
+                { "col": 10, "row": 2 },
+                { "col": 11, "row": 2 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 0 },
+                { "col": 9, "row": 0 },
+                { "col": 10, "row": 0 },
+                { "col": 11, "row": 0 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 4 },
+                { "col": 9, "row": 4 },
+                { "col": 10, "row": 4 },
+                { "col": 11, "row": 4 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "pink",
+      "colStart": 12,
+      "rowStart": 0,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 1 },
+                { "col": 13, "row": 1 },
+                { "col": 14, "row": 1 },
+                { "col": 15, "row": 1 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 12, "row": 2 },
+                { "col": 13, "row": 2 },
+                { "col": 14, "row": 2 },
+                { "col": 15, "row": 2 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 0 },
+                { "col": 13, "row": 0 },
+                { "col": 14, "row": 0 },
+                { "col": 15, "row": 0 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 4 },
+                { "col": 13, "row": 4 },
+                { "col": 14, "row": 4 },
+                { "col": 15, "row": 4 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "purple",
+      "colStart": 0,
+      "rowStart": 8,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 9 },
+                { "col": 1, "row": 9 },
+                { "col": 2, "row": 9 },
+                { "col": 3, "row": 9 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 0, "row": 10 },
+                { "col": 1, "row": 10 },
+                { "col": 2, "row": 10 },
+                { "col": 3, "row": 10 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 8 },
+                { "col": 1, "row": 8 },
+                { "col": 2, "row": 8 },
+                { "col": 3, "row": 8 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 12},
+                { "col": 1, "row": 12 },
+                { "col": 2, "row": 12 },
+                { "col": 3, "row": 12 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "turquoise",
+      "colStart": 4,
+      "rowStart": 8,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 9 },
+                { "col": 5, "row": 9 },
+                { "col": 6, "row": 9 },
+                { "col": 7, "row": 9 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 4, "row": 10 },
+                { "col": 5, "row": 10 },
+                { "col": 6, "row": 10 },
+                { "col": 7, "row": 10 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 8 },
+                { "col": 5, "row": 8 },
+                { "col": 6, "row": 8 },
+                { "col": 7, "row": 8 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 12},
+                { "col": 5, "row": 12 },
+                { "col": 6, "row": 12 },
+                { "col": 7, "row": 12 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "orange",
+      "colStart": 8,
+      "rowStart": 8,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 9 },
+                { "col": 9, "row": 9 },
+                { "col": 10, "row": 9 },
+                { "col": 11, "row": 9 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 8, "row": 10 },
+                { "col": 9, "row": 10 },
+                { "col": 10, "row": 10 },
+                { "col": 11, "row": 10 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 8 },
+                { "col": 9, "row": 8 },
+                { "col": 10, "row": 8 },
+                { "col": 11, "row": 8 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 8, "row": 12},
+                { "col": 9, "row": 12 },
+                { "col": 10, "row": 12 },
+                { "col": 11, "row": 12 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "gold",
+      "colStart": 12,
+      "rowStart": 8,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 9 },
+                { "col": 13, "row": 9 },
+                { "col": 14, "row": 9 },
+                { "col": 15, "row": 9 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 12, "row": 10 },
+                { "col": 13, "row": 10 },
+                { "col": 14, "row": 10 },
+                { "col": 15, "row": 10 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 8 },
+                { "col": 13, "row": 8 },
+                { "col": 14, "row": 8 },
+                { "col": 15, "row": 8 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 12},
+                { "col": 13, "row": 12 },
+                { "col": 14, "row": 12 },
+                { "col": 15, "row": 12 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "green",
+      "colStart": 0,
+      "rowStart": 16,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 17 },
+                { "col": 1, "row": 17 },
+                { "col": 2, "row": 17 },
+                { "col": 3, "row": 17 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 0, "row": 18 },
+                { "col": 1, "row": 18 },
+                { "col": 2, "row": 18 },
+                { "col": 3, "row": 18 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 16 },
+                { "col": 1, "row": 16 },
+                { "col": 2, "row": 16 },
+                { "col": 3, "row": 16 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 0, "row": 20 },
+                { "col": 1, "row": 20 },
+                { "col": 2, "row": 20 },
+                { "col": 3, "row": 20 }
+            ]
+        }
+      ]
+    },
+    {
+      "name": "shocking-pink",
+      "colStart": 4,
+      "rowStart": 16,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 17 },
+                { "col": 5, "row": 17 },
+                { "col": 6, "row": 17 },
+                { "col": 7, "row": 17 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 4, "row": 18 },
+                { "col": 5, "row": 18 },
+                { "col": 6, "row": 18 },
+                { "col": 7, "row": 18 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 16 },
+                { "col": 5, "row": 16 },
+                { "col": 6, "row": 16 },
+                { "col": 7, "row": 16 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 4, "row": 20 },
+                { "col": 5, "row": 20 },
+                { "col": 6, "row": 20 },
+                { "col": 7, "row": 20 }
+            ]
+        }
+      ]
+    },
+        {
+      "name": "red",
+      "colStart": 12,
+      "rowStart": 16,
+      "states":[
+        {
+            "status":"simple",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 17 },
+                { "col": 13, "row": 17 },
+                { "col": 14, "row": 17 },
+                { "col": 15, "row": 17 }
+            ]
+        },
+        {
+            "status":"simple",
+            "direction":"down",
+            "frames":[
+                { "col": 12, "row": 18 },
+                { "col": 13, "row": 18 },
+                { "col": 14, "row": 18 },
+                { "col": 15, "row": 18 }
+            ]
+        },
+        {
+            "status":"bubbling",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 16 },
+                { "col": 13, "row": 16 },
+                { "col": 14, "row": 16 },
+                { "col": 15, "row": 16 }
+            ]
+        },
+        {
+            "status":"glowing",
+            "direction":"left",
+            "frames":[
+                { "col": 12, "row": 20 },
+                { "col": 13, "row": 20 },
+                { "col": 14, "row": 20 },
+                { "col": 15, "row": 20 }
+            ]
+        }
+      ]
+    }
+  ]
+}

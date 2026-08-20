@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Aquarium</title>
+    <meta name="description" content="A zen virtual aquarium — watch pixel fish swim, drop food, and discover secrets.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/star.jpg">
+
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== START SCREEN OVERLAY ========== -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h1 class="start-title">Virtual Aquarium</h1>
+            <p class="start-subtitle">Click anywhere to enter</p>
+        </div>
+    </div>
+
+    <!-- ========== MODULAR APP LAYOUT ========== -->
+    <div id="app-container">
+
+        <!-- Header Pod: Title & Fish Counter -->
+        <header id="header-pod" class="pod header-pod">
+            <h1 class="title-text">Virtual Aquarium</h1>
+            <span id="fish-counter" class="fish-counter">🐟 3 / 10</span>
+        </header>
+
+        <!-- Main Area: Left Controls Pod | CRT/Glassy Tank Pod | Right Utility Pod -->
+        <main id="main-area">
+
+            <!-- Left Controls Pod -->
+            <nav id="sidebar-left" class="pod sidebar-pod" aria-label="Tank controls">
+                <!-- Add Fish -->
+                <button class="icon-btn" id="btn-add-fish" data-tooltip="Add Fish" aria-label="Add Fish">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12h8"/>
+                        <path d="M12 8v8"/>
+                    </svg>
+                </button>
+
+                <!-- Remove Fish -->
+                <button class="icon-btn" id="btn-remove-fish" data-tooltip="Remove Fish" aria-label="Remove Fish">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12h8"/>
+                    </svg>
+                </button>
+
+                <!-- Snapshot -->
+                <button class="icon-btn" id="btn-snapshot" data-tooltip="Snapshot" aria-label="Snapshot">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                        <circle cx="12" cy="13" r="3"/>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Center CRT / Glassy Tank Frame -->
+            <div id="tank-frame" class="tank-pod crt-frame">
+                <canvas id="tank-canvas"></canvas>
+                <!-- Flash overlay for snapshot effect (Phase 7) -->
+                <div id="flash-overlay"></div>
+                <!-- Glassy / CRT screen reflections -->
+                <div class="crt-glare" aria-hidden="true"></div>
+            </div>
+
+            <!-- Right Utility Pod -->
+            <nav id="sidebar-right" class="pod sidebar-pod" aria-label="Utility controls">
+                <!-- Sound Toggle (starts muted) -->
+                <button class="icon-btn" id="btn-sound" data-tooltip="Sound" aria-label="Toggle Sound">
+                    <!-- Unmuted icon (hidden by default) -->
+                    <svg id="icon-sound-on" class="hidden"
+                         xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                    </svg>
+                    <!-- Muted icon (shown by default) -->
+                    <svg id="icon-sound-off"
+                         xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                </button>
+
+                <!-- Help -->
+                <button class="icon-btn" id="btn-help" data-tooltip="Help" aria-label="Help">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </button>
+
+                <!-- Secret (5-pointed star — styled subtly) -->
+                <button class="icon-btn icon-secret" id="btn-secret" data-tooltip="???" aria-label="Secret">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </button>
+            </nav>
+        </main>
+
+        <!-- Footer Pod -->
+        <footer id="footer-pod" class="pod footer-pod">
+            <span class="footer-credit">Made by Ahmad</span>
+            <a href="https://www.linkedin.com/in/muhammad-ahmad-3b3005304/" class="footer-contact" target="_blank" rel="noopener noreferrer">Contact</a>
+            <div class="footer-volume">
+                <!-- Small speaker icon for context -->
+                <svg class="volume-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                </svg>
+                <input type="range" id="volume-slider" min="0" max="100" value="50" aria-label="Volume">
+            </div>
+        </footer>
+    </div>
+
+    <!-- ========== MODALS ========== -->
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal hidden" role="dialog" aria-labelledby="help-modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="help-modal-title">🕹️ Aquarium Controls</h2>
+            <div class="help-content">
+                <div class="help-row">
+                    <span class="help-key">Click Tank</span>
+                    <span class="help-desc">Drop food pellets to feed the fish (up to 5).</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">+ Button</span>
+                    <span class="help-desc">Add a new random fish to the aquarium (max 10).</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">- Button</span>
+                    <span class="help-desc">Remove a fish from the aquarium (min 1).</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">📷 Camera</span>
+                    <span class="help-desc">Capture a clean snapshot and download as PNG.</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">🔊 Speaker</span>
+                    <span class="help-desc">Toggle background music Mute / Unmute.</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">🎚️ Slider</span>
+                    <span class="help-desc">Adjust background music volume in real time.</span>
+                </div>
+                <div class="help-row">
+                    <span class="help-key">⭐ Star</span>
+                    <span class="help-desc">A mysterious secret awaits…</span>
+                </div>
+                <div class="help-shortcuts">
+                    <span class="shortcut-tag"><kbd>ESC</kbd> Close modal</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret / Password Modal -->
+    <div id="secret-modal" class="modal hidden" role="dialog" aria-labelledby="secret-modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="secret-modal-title">🔒 Enter the password</h2>
+            <div class="secret-form">
+                <input type="text" id="secret-input" placeholder="Type here…" autocomplete="off" spellcheck="false">
+                <button id="secret-submit" class="modal-btn">Submit</button>
+            </div>
+            <p id="secret-error" class="error-text hidden">Try again…</p>
+        </div>
+    </div>
+
+    <!-- Birthday Message Modal -->
+    <div id="birthday-modal" class="modal hidden" role="dialog" aria-labelledby="birthday-modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card birthday-card">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="birthday-cake-icon">🎂✨</div>
+            <h2 id="birthday-modal-title">Happy Birthday, Azka! 🎈</h2>
+            <div class="birthday-body">
+                <p class="birthday-message">
+                    Wishing you the happiest, brightest, and most magical birthday! May your year ahead be as serene, colorful, and joyful as this peaceful little underwater world.
+                </p>
+                <p class="birthday-subtext">
+                    Look closely into the aquarium — your special golden Pufferfish has joined the tank to celebrate with you! 🐡💛
+                </p>
+            </div>
+            <div class="birthday-footer">
+                <span>With love & best wishes ✨</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
